@@ -10,7 +10,7 @@ export default function Form(props : Props) {
     return (
         <form
         {...props}
-        className={clsx("mt-10 space-y-3", className)}
+        className={clsx("mt-10 space-y-3 shadow-2xl p-5", className)}
         >
             {props.children}
         </form>

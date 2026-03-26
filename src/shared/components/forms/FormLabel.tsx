@@ -11,7 +11,7 @@ export default function FormLabel(props: Props) {
     return (
         <label
             {...props}
-            className={clsx("mt-10 space-y-3", className)}
+            className={clsx("block", className)}
         >
             {props.children}
         </label>

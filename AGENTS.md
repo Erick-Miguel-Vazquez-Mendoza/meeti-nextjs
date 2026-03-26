@@ -42,15 +42,6 @@ Los siguientes comandos están definidos en `package.json` para tareas de desarr
     ```
     Ejecuta ESLint para verificar la calidad del código y los problemas de estilo.
 
-*   **Pruebas:**
-    No se encontró ningún script de prueba explícito en `package.json`. Para las pruebas, se recomienda integrar un framework de pruebas como [Jest](https://jestjs.io/) o [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) para pruebas unitarias y de integración.
-    *   **Ejecutar una sola prueba (ejemplo con Jest):**
-        Si Jest estuviera configurado, normalmente ejecutarías un solo archivo de prueba de esta manera:
-        ```bash
-        npx jest path/to/your/test-file.test.ts
-        ```
-        Por favor, consulta la documentación del framework de pruebas elegido para conocer los comandos específicos una vez que esté configurado.
-
 ## 3. Directrices de Estilo de Código
 
 ### 3.1 Principios Generales
