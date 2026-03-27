@@ -1,18 +1,28 @@
 "use client"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
+import toast from "react-hot-toast"
 import { Form, FormLabel, FormInput, FormSubmit, FormError } from "@/src/shared/components/forms"
-import { SignUpSchema } from "../schemas/authSchema"
+import { SignUpInput, SignUpSchema } from "../schemas/authSchema"
+import { signUpAction } from "../actions/auth-actions"
 
 export default function RegisterForm() {
 
-    const { register, handleSubmit, watch, formState : {errors} } = useForm({
-        resolver: zodResolver(SignUpSchema)
+    const { register, handleSubmit, formState : {errors}, reset } = useForm({
+        resolver: zodResolver(SignUpSchema),
+        mode: 'all'
     })
-    console.log(errors);
     
-    const onSubmit = () => {
+    const onSubmit = async (data : SignUpInput) => {
+        const {error, success} = await signUpAction(data)
 
+        if (error) {
+            toast.error(error)
+        }
+        if (success) {
+            toast.success(success)
+            reset()
+        }
     }
 
     return (
